@@ -2,72 +2,57 @@
 
 ## Descrição
 
-Este é um simples jogo de **Super Trunfo** implementado em linguagem **C**, onde duas cartas de cidades brasileiras são comparadas com base no atributo **PIB**. O jogo recebe as informações de duas cartas e realiza a comparação entre elas, determinando qual cidade possui o maior PIB. O objetivo do jogo é determinar qual carta (cidade) é a vencedora com base nesse atributo.
+Este projeto é um jogo de comparação de cidades baseado em atributos como população, área, PIB, pontos turísticos, densidade populacional e PIB per capita. O jogador escolhe dois atributos numéricos diferentes para comparar as cartas das cidades. O sistema exibe os valores dos atributos, realiza a comparação entre as cidades e determina o vencedor da rodada com base na maior soma dos atributos escolhidos.
 
 ## Funcionalidades
 
-- O programa solicita ao usuário que insira os dados de duas cartas de cidades.
-- Para cada carta, são fornecidos os seguintes atributos:
-  - **Estado** da cidade
-  - **Nome da cidade**
-  - **Código da carta**
-  - **População**
-  - **Área** (em km²)
-  - **PIB** (Produto Interno Bruto)
-  - **Pontos turísticos** da cidade
-- O programa calcula dois valores adicionais:
-  - **Densidade populacional** (População / Área)
-  - **PIB per capita** (PIB / População)
-- O programa compara os valores de **PIB** das duas cartas e exibe o vencedor. Se o PIB das duas cartas for igual, é declarado um empate.
+- Entrada de dados para duas cidades, incluindo:
 
-## Como Jogar
+- Estado, nome da cidade, código da carta, população, área, PIB e pontos turísticos.
+- O jogador pode escolher dois atributos numéricos diferentes para comparar entre as duas cidades. Os atributos disponíveis são:
 
-1. **Inserir os Dados das Cartas:**
-   O programa solicita que o usuário insira as informações de duas cartas de cidades, uma de cada vez. As informações solicitadas incluem:
+      - População
+      - Área
+      - PIB
+      - Pontos turísticos
+      - Densidade populacional
+      - PIB per capita
 
-   - Estado da cidade
-   - Nome da cidade
-   - Código da carta
-   - População da cidade
-   - Área da cidade
-   - PIB da cidade
-   - Número de pontos turísticos na cidade
+- O sistema compara os atributos escolhidos individualmente e determina o vencedor para cada atributo, com a exceção de Densidade populacional, onde vence a carta com o menor valor.
 
-2. **Comparação das Cartas:**
-   Após inserir os dados, o programa compara o **PIB** de cada carta e determina a vencedora. A carta com o maior PIB vence.
+- Após a comparação individual dos atributos, o sistema soma os valores dos dois atributos para cada carta e determina a cidade vencedora com a maior soma.
 
-3. **Resultado:**
-   O resultado é exibido informando qual carta venceu a comparação, ou se houve um empate.
+- Em caso de empate, o sistema exibe "Empate!" para o atributo ou para a rodada.
 
-## Exemplo de Execução
+## Como funciona
 
-Abaixo está um exemplo de como o programa funciona:
+1. Entrada de dados: O jogador insere os dados de duas cidades (estado, nome da cidade, código da carta, população, área, PIB, pontos turísticos).
 
-## Como Funciona o Código
+2. Escolha dos atributos: O jogador escolhe dois atributos diferentes para comparação.
 
-1. **Leitura dos Dados:**
-   O programa solicita os dados das duas cartas usando `scanf` e armazena as informações em variáveis apropriadas.
+3. Comparação dos atributos: O sistema compara os valores de cada atributo entre as duas cidades. A cidade com o maior valor para o atributo escolhido vence.
 
-2. **Cálculos:**
-   O programa calcula a **densidade populacional** e o **PIB per capita** para cada carta.
+4. Soma dos atributos: O sistema soma os valores dos dois atributos escolhidos para cada cidade e determina a cidade vencedora com a maior soma total.
 
-3. **Comparação:**
-   O programa compara o **PIB** das duas cartas. A carta com o maior PIB vence.
+5. Resultado: O vencedor é exibido, com base na comparação e na soma dos atributos. Caso haja empate, o sistema informará um empate.
 
-4. **Exibição do Resultado:**
-   O programa exibe os dados das cartas, incluindo PIB, e depois mostra o vencedor da comparação.
+## Requisitos
 
-## Tecnologias Utilizadas
+- Sistema Operacional: Qualquer sistema que tenha um compilador de C (como GCC ou Clang).
+- Bibliotecas: Nenhuma biblioteca externa é necessária, o código usa apenas bibliotecas padrão da linguagem C (stdio.h e string.h).
 
-- **Linguagem de Programação:** C
-- **Ferramenta de Compilação:** GCC ou qualquer compilador C compatível
+## Como rodar
 
-## Instruções para Compilação e Execução
+1. Compilar o código: Para compilar o código em C, use o seguinte comando no terminal (considerando que o código esteja em um arquivo chamado comparacao_cidades.c):
 
-### Compilação
+```
+gcc comparacao_cidades.c -o comparacao_cidades
+```
 
-Para compilar e executar utilize a extensão no vscode para linguagem C.
+2. Executar o programa: Após a compilação, execute o programa gerado com o comando:
 
-### Requisitos
+```
+./comparacao_cidades
+```
 
-Este programa pode ser compilado e executado em qualquer ambiente que suporte a linguagem C, como Linux, macOS ou Windows (com o MinGW ou Cygwin).
+2.2 Ou utilize o próprio compilador da extensão C no visual studio code 3. Siga as instruções na tela: O programa pedirá para você inserir os dados das cidades e escolher os atributos para a comparação. Após a escolha, o programa realizará a comparação e exibirá o vencedor.
